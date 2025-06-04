@@ -194,7 +194,7 @@ function collectFormDataForDiscord() {
     // --- Weitere Reflexionsfragen ---
     messageContent += "**Weitere Reflexionsfragen**\n";
     const weitereFragenTextareas = [
-        { id: 'zusatz_zuhoren_bedeutung', label: 'Was bedeutet für dich „zuhören“?' },
+        { id: 'zusatz_zuhoren_bedeutung', label: 'Was bedeutet für dich „zuhören"?' },
         { id: 'zusatz_motivation_begleitung', label: 'Warum möchtest du Menschen in schwierigen Situationen begleiten?' },
         { id: 'zusatz_guter_zuhoerer', label: 'In welchen Situationen fühlst du dich als besonders guter Zuhörer?' },
         { id: 'zusatz_themen_herz', label: 'Welche Themen liegen dir besonders am Herzen?' },
@@ -208,7 +208,7 @@ function collectFormDataForDiscord() {
         { id: 'zusatz_mitfuehlen_loesung', label: 'Was ist dir wichtiger: mitzufühlen oder Lösungen anzubieten?' },
         { id: 'zusatz_umgang_widerspruch_werte', label: 'Wie gehst du mit Meinungen um, die deinen eigenen Werten widersprechen?' },
         { id: 'zusatz_ratschlaege_wann', label: 'Wann gibst du Ratschläge – und wann eher nicht?' },
-        { id: 'zusatz_hilfe_selbsthilfe', label: 'Was verstehst du unter „Hilfe zur Selbsthilfe“?' },
+        { id: 'zusatz_hilfe_selbsthilfe', label: 'Was verstehst du unter „Hilfe zur Selbsthilfe"?' },
         { id: 'zusatz_reaktion_weinen', label: 'Was würdest du tun, wenn jemand während des Gesprächs weint?' },
         { id: 'zusatz_reaktion_wut_person', label: 'Wie reagierst du, wenn jemand sehr wütend wird?' },
         { id: 'zusatz_nicht_weiterkommen', label: 'Was machst du, wenn du das Gefühl hast, nicht weiterzukommen?' },
@@ -217,7 +217,7 @@ function collectFormDataForDiscord() {
         { id: 'zusatz_grenzen_verantwortung', label: 'Wo liegen für dich die Grenzen deiner Verantwortung?' },
         { id: 'zusatz_entscheidung_weiterleitung', label: 'Wie würdest du entscheiden, wann du eine Person an professionelle Hilfe weiterleitest?' },
         { id: 'zusatz_warnzeichen_prof_hilfe', label: 'Was sind klare Warnzeichen, dass jemand dringend professionelle Unterstützung braucht?' },
-        { id: 'zusatz_vertraulichkeit', label: 'Was verstehst du unter „Vertraulichkeit“ – und wo hat sie Grenzen?' },
+        { id: 'zusatz_vertraulichkeit', label: 'Was verstehst du unter „Vertraulichkeit" – und wo hat sie Grenzen?' },
         { id: 'zusatz_team_reflexion', label: 'Wärst du bereit, im Team über schwierige Fälle zu reflektieren?' },
         { id: 'zusatz_kritikfaehigkeit', label: 'Wie gut kannst du Kritik annehmen und verarbeiten?' },
         { id: 'zusatz_austausch_gruppe', label: 'Wie wichtig ist dir Austausch mit anderen in der Gruppe?' },
@@ -230,11 +230,8 @@ function collectFormDataForDiscord() {
     });
 
     // --- Abschlussfrage ---
-    const abschlussMitgeben = formData.get('abschluss_mitgeben');
-    if (abschlussMitgeben && abschlussMitgeben.trim() !== '') {
-        messageContent += "**Abschlussfrage (optional):**\n";
-        messageContent += `> ${abschlussMitgeben.replace(/\n/g, '\n> ')}\n\n`;
-    }
+    messageContent += "**Abschlussfrage (optional):**\n";
+    messageContent += `> ${formData.get('abschluss_mitgeben') || 'N/A'}\n\n`;
     
     // Discord hat ein Zeichenlimit pro Nachricht (2000).
     // Bei Bedarf auf mehrere Nachrichten aufteilen oder kürzen.
