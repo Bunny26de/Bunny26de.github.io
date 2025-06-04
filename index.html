@@ -72,15 +72,15 @@
             <h2 class="sub-title">Teil 1: Allgemeine Angaben</h2>
             <div class="form-group">
                 <label for="name">Vor- und Nachname:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name">
             </div>
             <div class="form-group">
                 <label for="email">E-Mail-Adresse:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email">
             </div>
             <div class="form-group">
                 <label for="alter">Alter:</label>
-                <input type="number" id="alter" name="alter" min="1" required> <!-- min="1" für sinnvolle Eingabe -->
+                <input type="number" id="alter" name="alter" min="1"> <!-- min="1" für sinnvolle Eingabe -->
             </div>
             <div class="form-group">
                 <label for="beruf">Beruf / Ausbildung:</label>
@@ -109,8 +109,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Ich kann gut zuhören, ohne sofort Ratschläge zu geben.</td>
+                        <tr>                            <td>Ich kann gut zuhören, ohne sofort Ratschläge zu geben.</td>
                             <td><input type="radio" name="selbst1" value="1" aria-label="Bewertung 1 für: Zuhören ohne Ratschläge"></td>
                             <td><input type="radio" name="selbst1" value="2" aria-label="Bewertung 2 für: Zuhören ohne Ratschläge"></td>
                             <td><input type="radio" name="selbst1" value="3" aria-label="Bewertung 3 für: Zuhören ohne Ratschläge"></td>
@@ -256,7 +255,7 @@
                 <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
             </div>
             <div class="form-group">
-                <label for="reflexion_haltung">Welche Haltung möchtest du in Gesprächen vertreten (z. B. Neutralität, Mitgefühl, Lösungsorientierung)?</label>
+                <label for="reflexion_haltung">Welche Haltung möchtest du in Gesprächen vertreten (z. B. Neutralität, Mitgefühl, Lösungsorientierung)?</label>
                 <textarea id="reflexion_haltung" name="reflexion_haltung" rows="3"></textarea>
                 <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
             </div>
