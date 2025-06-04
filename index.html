@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewerbung Zuhör-Projekt</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="desktop-nav">
+        <div class="logo">Zuhör-Projekt</div>
+        <ul class="nav-links">
+            <li><a href="#profile" class="nav-as-button">Start</a></li>
+            <li><a href="#teil1" class="nav-as-button">Teil 1</a></li>
+            <li><a href="#teil2" class="nav-as-button">Teil 2</a></li>
+            <li><a href="#teil3" class="nav-as-button">Teil 3</a></li>
+            <li><a href="#teil4" class="nav-as-button">Teil 4</a></li>
+            <li><a href="#teil5" class="nav-as-button">Teil 5</a></li>
+            <li><a href="#weitere-fragen" class="nav-as-button">Reflexion</a></li>
+            <li><a href="#abschluss" class="nav-as-button">Abschluss</a></li>
+        </ul>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Zuhör-Projekt</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#profile" class="nav-as-button" onclick="toggleMenu()">Start</a></li>
+                <li><a href="#teil1" class="nav-as-button" onclick="toggleMenu()">Teil 1</a></li>
+                <li><a href="#teil2" class="nav-as-button" onclick="toggleMenu()">Teil 2</a></li>
+                <li><a href="#teil3" class="nav-as-button" onclick="toggleMenu()">Teil 3</a></li>
+                <li><a href="#teil4" class="nav-as-button" onclick="toggleMenu()">Teil 4</a></li>
+                <li><a href="#teil5" class="nav-as-button" onclick="toggleMenu()">Teil 5</a></li>
+                <li><a href="#weitere-fragen" class="nav-as-button" onclick="toggleMenu()">Reflexion</a></li>
+                <li><a href="#abschluss" class="nav-as-button" onclick="toggleMenu()">Abschluss</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1&fit=crop" alt="Eine Person hört aufmerksam zu" />
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Willkommen!</p>
+            <h1 class="title" style="text-align: left; margin-left:0;">Engagiere dich im Zuhör-Projekt</h1>
+            <p class="section__text__p2">Werde Teil unseres Teams</p>
+            <p>
+                Wir suchen engagierte Menschen, die bereit sind, anderen zuzuhören und sie in schwierigen Situationen zu unterstützen.
+                Fülle bitte das folgende Formular sorgfältig aus, damit wir dich besser kennenlernen können.
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="location.href='#teil1'">
+                    Jetzt bewerben
+                </button>
+            </div>
+            <div id="socials-container">
+            </div>
+             <a href="#teil1" class="arrow-down" aria-label="Nach unten scrollen zum nächsten Abschnitt">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <form id="bewerbungsformular" action="#" method="post">
