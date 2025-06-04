@@ -66,6 +66,9 @@
                 </button>
             </div>
             <div id="socials-container">
+                <!-- Statt inline style="filter: invert(1)" könnte man dies auch in CSS machen, falls alle Icons im Socials Container so sein sollen -->
+                <img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn Profil" class="icon" onclick="location.href='https://linkedin.com/'" style="filter: invert(1);"/>
+                <img src="https://simpleicons.org/icons/github.svg" alt="Github Profil" class="icon" onclick="location.href='https://github.com/'" style="filter: invert(1);"/>
             </div>
              <a href="#teil1" class="arrow-down" aria-label="Nach unten scrollen zum nächsten Abschnitt">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg>
@@ -74,3 +77,482 @@
     </section>
 
     <form id="bewerbungsformular" action="#" method="post">
+        <section id="teil1" class="form-section-block">
+            <h2 class="sub-title">Teil 1: Allgemeine Angaben</h2>
+            <div class="form-group">
+                <label for="name">Vor- und Nachname:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail-Adresse:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="alter">Alter:</label>
+                <input type="number" id="alter" name="alter" min="1" required> <!-- min="1" für sinnvolle Eingabe -->
+            </div>
+            <div class="form-group">
+                <label for="beruf">Beruf / Ausbildung:</label>
+                <input type="text" id="beruf" name="beruf">
+            </div>
+            <div class="form-group">
+                <label for="erfahrungen_beratung">Bisherige Erfahrungen im Bereich Zuhören / Beratung (freiwillig oder beruflich):</label>
+                <textarea id="erfahrungen_beratung" name="erfahrungen_beratung" rows="4"></textarea> <!-- rows Attribut für Standardgröße -->
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+        </section>
+
+        <section id="teil2" class="form-section-block">
+            <h2 class="sub-title">Teil 2: Selbsteinschätzung</h2>
+            <p>Bitte bewerte die folgenden Aussagen auf einer Skala von 1 (trifft gar nicht zu) bis 5 (trifft voll zu).</p>
+            <div class="assessment-table-container">
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>Aussage</th>
+                            <th>1 <span class="sr-only">(trifft gar nicht zu)</span></th>
+                            <th>2 <span class="sr-only">(trifft eher nicht zu)</span></th>
+                            <th>3 <span class="sr-only">(teils/teils)</span></th>
+                            <th>4 <span class="sr-only">(trifft eher zu)</span></th>
+                            <th>5 <span class="sr-only">(trifft voll zu)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ich kann gut zuhören, ohne sofort Ratschläge zu geben.</td>
+                            <td><input type="radio" name="selbst1" value="1" aria-label="Bewertung 1 für: Zuhören ohne Ratschläge"></td>
+                            <td><input type="radio" name="selbst1" value="2" aria-label="Bewertung 2 für: Zuhören ohne Ratschläge"></td>
+                            <td><input type="radio" name="selbst1" value="3" aria-label="Bewertung 3 für: Zuhören ohne Ratschläge"></td>
+                            <td><input type="radio" name="selbst1" value="4" aria-label="Bewertung 4 für: Zuhören ohne Ratschläge"></td>
+                            <td><input type="radio" name="selbst1" value="5" aria-label="Bewertung 5 für: Zuhören ohne Ratschläge"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich fühle mich wohl, wenn Menschen sich mir gegenüber öffnen.</td>
+                            <td><input type="radio" name="selbst2" value="1" aria-label="Bewertung 1 für: Wohlfühlen bei Öffnung"></td>
+                            <td><input type="radio" name="selbst2" value="2" aria-label="Bewertung 2 für: Wohlfühlen bei Öffnung"></td>
+                            <td><input type="radio" name="selbst2" value="3" aria-label="Bewertung 3 für: Wohlfühlen bei Öffnung"></td>
+                            <td><input type="radio" name="selbst2" value="4" aria-label="Bewertung 4 für: Wohlfühlen bei Öffnung"></td>
+                            <td><input type="radio" name="selbst2" value="5" aria-label="Bewertung 5 für: Wohlfühlen bei Öffnung"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich kann mit Menschen reden, die andere Meinungen oder Lebensstile haben als ich.</td>
+                            <td><input type="radio" name="selbst3" value="1" aria-label="Bewertung 1 für: Reden bei anderen Meinungen"></td>
+                            <td><input type="radio" name="selbst3" value="2" aria-label="Bewertung 2 für: Reden bei anderen Meinungen"></td>
+                            <td><input type="radio" name="selbst3" value="3" aria-label="Bewertung 3 für: Reden bei anderen Meinungen"></td>
+                            <td><input type="radio" name="selbst3" value="4" aria-label="Bewertung 4 für: Reden bei anderen Meinungen"></td>
+                            <td><input type="radio" name="selbst3" value="5" aria-label="Bewertung 5 für: Reden bei anderen Meinungen"></td>
+                        </tr>
+                         <tr>
+                            <td>Ich kann gut aushalten, wenn jemand traurig oder verzweifelt ist.</td>
+                            <td><input type="radio" name="selbst4" value="1" aria-label="Bewertung 1 für: Aushalten von Trauer"></td>
+                            <td><input type="radio" name="selbst4" value="2" aria-label="Bewertung 2 für: Aushalten von Trauer"></td>
+                            <td><input type="radio" name="selbst4" value="3" aria-label="Bewertung 3 für: Aushalten von Trauer"></td>
+                            <td><input type="radio" name="selbst4" value="4" aria-label="Bewertung 4 für: Aushalten von Trauer"></td>
+                            <td><input type="radio" name="selbst4" value="5" aria-label="Bewertung 5 für: Aushalten von Trauer"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich merke frühzeitig, wenn mich etwas emotional belastet.</td>
+                            <td><input type="radio" name="selbst5" value="1" aria-label="Bewertung 1 für: Frühzeitiges Bemerken emotionaler Belastung"></td>
+                            <td><input type="radio" name="selbst5" value="2" aria-label="Bewertung 2 für: Frühzeitiges Bemerken emotionaler Belastung"></td>
+                            <td><input type="radio" name="selbst5" value="3" aria-label="Bewertung 3 für: Frühzeitiges Bemerken emotionaler Belastung"></td>
+                            <td><input type="radio" name="selbst5" value="4" aria-label="Bewertung 4 für: Frühzeitiges Bemerken emotionaler Belastung"></td>
+                            <td><input type="radio" name="selbst5" value="5" aria-label="Bewertung 5 für: Frühzeitiges Bemerken emotionaler Belastung"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich habe Strategien, um mit emotional belastenden Situationen umzugehen.</td>
+                            <td><input type="radio" name="selbst6" value="1" aria-label="Bewertung 1 für: Strategien für emotionale Belastung"></td>
+                            <td><input type="radio" name="selbst6" value="2" aria-label="Bewertung 2 für: Strategien für emotionale Belastung"></td>
+                            <td><input type="radio" name="selbst6" value="3" aria-label="Bewertung 3 für: Strategien für emotionale Belastung"></td>
+                            <td><input type="radio" name="selbst6" value="4" aria-label="Bewertung 4 für: Strategien für emotionale Belastung"></td>
+                            <td><input type="radio" name="selbst6" value="5" aria-label="Bewertung 5 für: Strategien für emotionale Belastung"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich kann offen kommunizieren, ohne dabei verletzend zu sein.</td>
+                            <td><input type="radio" name="selbst7" value="1" aria-label="Bewertung 1 für: Offene, nicht verletzende Kommunikation"></td>
+                            <td><input type="radio" name="selbst7" value="2" aria-label="Bewertung 2 für: Offene, nicht verletzende Kommunikation"></td>
+                            <td><input type="radio" name="selbst7" value="3" aria-label="Bewertung 3 für: Offene, nicht verletzende Kommunikation"></td>
+                            <td><input type="radio" name="selbst7" value="4" aria-label="Bewertung 4 für: Offene, nicht verletzende Kommunikation"></td>
+                            <td><input type="radio" name="selbst7" value="5" aria-label="Bewertung 5 für: Offene, nicht verletzende Kommunikation"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich traue mir zu, auch schwierige Gespräche wertschätzend zu führen.</td>
+                            <td><input type="radio" name="selbst8" value="1" aria-label="Bewertung 1 für: Wertschätzende Führung schwieriger Gespräche"></td>
+                            <td><input type="radio" name="selbst8" value="2" aria-label="Bewertung 2 für: Wertschätzende Führung schwieriger Gespräche"></td>
+                            <td><input type="radio" name="selbst8" value="3" aria-label="Bewertung 3 für: Wertschätzende Führung schwieriger Gespräche"></td>
+                            <td><input type="radio" name="selbst8" value="4" aria-label="Bewertung 4 für: Wertschätzende Führung schwieriger Gespräche"></td>
+                            <td><input type="radio" name="selbst8" value="5" aria-label="Bewertung 5 für: Wertschätzende Führung schwieriger Gespräche"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich bin in der Lage, zwischen eigener Meinung und neutraler Haltung zu unterscheiden.</td>
+                            <td><input type="radio" name="selbst9" value="1" aria-label="Bewertung 1 für: Unterscheidung Meinung und Neutralität"></td>
+                            <td><input type="radio" name="selbst9" value="2" aria-label="Bewertung 2 für: Unterscheidung Meinung und Neutralität"></td>
+                            <td><input type="radio" name="selbst9" value="3" aria-label="Bewertung 3 für: Unterscheidung Meinung und Neutralität"></td>
+                            <td><input type="radio" name="selbst9" value="4" aria-label="Bewertung 4 für: Unterscheidung Meinung und Neutralität"></td>
+                            <td><input type="radio" name="selbst9" value="5" aria-label="Bewertung 5 für: Unterscheidung Meinung und Neutralität"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich achte darauf, meine eigenen Grenzen zu schützen.</td>
+                            <td><input type="radio" name="selbst10" value="1" aria-label="Bewertung 1 für: Schutz eigener Grenzen"></td>
+                            <td><input type="radio" name="selbst10" value="2" aria-label="Bewertung 2 für: Schutz eigener Grenzen"></td>
+                            <td><input type="radio" name="selbst10" value="3" aria-label="Bewertung 3 für: Schutz eigener Grenzen"></td>
+                            <td><input type="radio" name="selbst10" value="4" aria-label="Bewertung 4 für: Schutz eigener Grenzen"></td>
+                            <td><input type="radio" name="selbst10" value="5" aria-label="Bewertung 5 für: Schutz eigener Grenzen"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich erkenne, wenn jemand Unterstützung über dieses Gesprächsangebot hinaus braucht.</td>
+                            <td><input type="radio" name="selbst11" value="1" aria-label="Bewertung 1 für: Erkennen weitergehenden Unterstützungsbedarfs"></td>
+                            <td><input type="radio" name="selbst11" value="2" aria-label="Bewertung 2 für: Erkennen weitergehenden Unterstützungsbedarfs"></td>
+                            <td><input type="radio" name="selbst11" value="3" aria-label="Bewertung 3 für: Erkennen weitergehenden Unterstützungsbedarfs"></td>
+                            <td><input type="radio" name="selbst11" value="4" aria-label="Bewertung 4 für: Erkennen weitergehenden Unterstützungsbedarfs"></td>
+                            <td><input type="radio" name="selbst11" value="5" aria-label="Bewertung 5 für: Erkennen weitergehenden Unterstützungsbedarfs"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich kann im Notfall Hilfe organisieren oder mich an Ansprechpersonen wenden.</td>
+                            <td><input type="radio" name="selbst12" value="1" aria-label="Bewertung 1 für: Hilfeorganisation im Notfall"></td>
+                            <td><input type="radio" name="selbst12" value="2" aria-label="Bewertung 2 für: Hilfeorganisation im Notfall"></td>
+                            <td><input type="radio" name="selbst12" value="3" aria-label="Bewertung 3 für: Hilfeorganisation im Notfall"></td>
+                            <td><input type="radio" name="selbst12" value="4" aria-label="Bewertung 4 für: Hilfeorganisation im Notfall"></td>
+                            <td><input type="radio" name="selbst12" value="5" aria-label="Bewertung 5 für: Hilfeorganisation im Notfall"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich arbeite gerne mit anderen im Team zusammen.</td>
+                            <td><input type="radio" name="selbst13" value="1" aria-label="Bewertung 1 für: Teamarbeit"></td>
+                            <td><input type="radio" name="selbst13" value="2" aria-label="Bewertung 2 für: Teamarbeit"></td>
+                            <td><input type="radio" name="selbst13" value="3" aria-label="Bewertung 3 für: Teamarbeit"></td>
+                            <td><input type="radio" name="selbst13" value="4" aria-label="Bewertung 4 für: Teamarbeit"></td>
+                            <td><input type="radio" name="selbst13" value="5" aria-label="Bewertung 5 für: Teamarbeit"></td>
+                        </tr>
+                        <tr>
+                            <td>Ich bin offen für Feedback und kann konstruktiv damit umgehen.</td>
+                            <td><input type="radio" name="selbst14" value="1" aria-label="Bewertung 1 für: Offenheit für Feedback"></td>
+                            <td><input type="radio" name="selbst14" value="2" aria-label="Bewertung 2 für: Offenheit für Feedback"></td>
+                            <td><input type="radio" name="selbst14" value="3" aria-label="Bewertung 3 für: Offenheit für Feedback"></td>
+                            <td><input type="radio" name="selbst14" value="4" aria-label="Bewertung 4 für: Offenheit für Feedback"></td>
+                            <td><input type="radio" name="selbst14" value="5" aria-label="Bewertung 5 für: Offenheit für Feedback"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="teil3" class="form-section-block">
+            <h2 class="sub-title">Teil 3: Reflexionsfragen (Kurzantwort)</h2>
+            <p>Bitte beantworte folgende Fragen in 2–5 Sätzen (max. 250 Wörter pro Frage):</p>
+            
+            <div class="form-group">
+                <label for="reflexion_motivation">Was motiviert dich, an diesem Projekt teilzunehmen?</label>
+                <textarea id="reflexion_motivation" name="reflexion_motivation" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_umgang">Was ist dir besonders wichtig im Umgang mit anderen Menschen?</label>
+                <textarea id="reflexion_umgang" name="reflexion_umgang" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_wut">Wie reagierst du, wenn du das Gefühl hast, jemand projiziert seine Wut auf dich?</label>
+                <textarea id="reflexion_wut" name="reflexion_wut" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_beistand">Beschreibe eine Situation, in der du jemandem erfolgreich beigestanden hast.</label>
+                <textarea id="reflexion_beistand" name="reflexion_beistand" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_selbsthilfe">Wie erkennst du, dass du selbst Unterstützung brauchst – und was tust du dann?</label>
+                <textarea id="reflexion_selbsthilfe" name="reflexion_selbsthilfe" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_haltung">Welche Haltung möchtest du in Gesprächen vertreten (z. B. Neutralität, Mitgefühl, Lösungsorientierung)?</label>
+                <textarea id="reflexion_haltung" name="reflexion_haltung" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="reflexion_schwere_zeit">Was würdest du tun, wenn du selbst gerade eine schwere Zeit hast – kannst du dann trotzdem Gespräche führen?</label>
+                <textarea id="reflexion_schwere_zeit" name="reflexion_schwere_zeit" rows="3"></textarea>
+                <span class="char-limit">(2-5 Sätze, max. 250 Wörter)</span>
+            </div>
+        </section>
+
+        <section id="teil4" class="form-section-block">
+            <h2 class="sub-title">Teil 4: Einschätzungsfragen</h2>
+            
+            <fieldset class="form-group">
+                <legend>Was tust du, wenn dir während eines Gesprächs ein Thema zu nah geht?</legend>
+                <div class="radio-group">
+                    <label><input type="radio" name="thema_zu_nah" value="a"> Ich spreche es offen an</label>
+                    <label><input type="radio" name="thema_zu_nah" value="b"> Ich beende das Gespräch professionell</label>
+                    <label><input type="radio" name="thema_zu_nah" value="c"> Ich ziehe mich zurück</label>
+                    <label><input type="radio" name="thema_zu_nah" value="d_text" id="thema_zu_nah_sonstiges_radio"> Sonstiges:</label>
+                </div>
+                <input type="text" name="thema_zu_nah_sonstiges_text" aria-labelledby="thema_zu_nah_sonstiges_radio" placeholder="Wenn Sonstiges, bitte hier eintragen">
+            </fieldset>
+
+            <div class="form-group">
+                <label for="einschatzung_suizid">Wie würdest du reagieren, wenn jemand im Gespräch Suizidgedanken äußert? (Kurzantwort)</label>
+                <textarea id="einschatzung_suizid" name="einschatzung_suizid" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>In welchen Themen fühlst du dich eher unsicher? (Mehrfachauswahl möglich)</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="unsichere_themen[]" value="sucht"> Sucht / Alkohol</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="gewalt"> Gewalt / Missbrauch</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="psych_erkrankung"> Psychische Erkrankungen</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="behinderung"> Behinderung</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="migration"> Migration / Sprachbarrieren</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="sexualitaet"> Sexualität / LGBTQIA+</label>
+                    <label><input type="checkbox" name="unsichere_themen[]" value="keine"> Keine – ich fühle mich in allen Bereichen sicher</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Wärst du bereit, dich in diesen Bereichen weiterzubilden?</legend>
+                <div class="radio-group">
+                    <label><input type="radio" name="weiterbildung" value="ja"> Ja, gerne</label>
+                    <label><input type="radio" name="weiterbildung" value="bestimmte" id="weiterbildung_bestimmte_radio"> Nur in bestimmten Themen <span class="choice-explanation">(Bitte gib ggf. im Freitextfeld unten an, welche)</span></label>
+                    <label><input type="radio" name="weiterbildung" value="nein"> Nein</label>
+                </div>
+                 <input type="text" name="weiterbildung_themen_spezifisch_text" aria-labelledby="weiterbildung_bestimmte_radio" placeholder="Falls 'Nur in bestimmten Themen', bitte hier nennen">
+            </fieldset>
+        </section>
+
+        <section id="teil5" class="form-section-block">
+            <h2 class="sub-title">Teil 5: Verfügbarkeit & Rahmenbedingungen</h2>
+            <fieldset class="form-group">
+                <legend>Wie viel Zeit könntest du pro Woche aufbringen?</legend>
+                <div class="radio-group">
+                    <label><input type="radio" name="zeit_pro_woche" value="1-2"> 1–2 Stunden</label>
+                    <label><input type="radio" name="zeit_pro_woche" value="3-5"> 3–5 Stunden</label>
+                    <label><input type="radio" name="zeit_pro_woche" value="mehr_als_5"> Mehr als 5 Stunden</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Wann bist du vorrangig verfügbar? (Mehrfachauswahl möglich)</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="verfuegbarkeit_wann[]" value="vormittags"> Vormittags</label>
+                    <label><input type="checkbox" name="verfuegbarkeit_wann[]" value="nachmittags"> Nachmittags</label>
+                    <label><input type="checkbox" name="verfuegbarkeit_wann[]" value="abends"> Abends</label>
+                    <label><input type="checkbox" name="verfuegbarkeit_wann[]" value="wochenende"> Am Wochenende</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Bist du bereit, an einer vorbereitenden Schulung teilzunehmen?</legend>
+                <div class="radio-group">
+                    <label><input type="radio" name="schulung_teilnahme" value="ja"> Ja</label>
+                    <label><input type="radio" name="schulung_teilnahme" value="nein"> Nein</label>
+                    <label><input type="radio" name="schulung_teilnahme" value="vielleicht"> Vielleicht</label>
+                </div>
+            </fieldset>
+        </section>
+        
+        <section id="weitere-fragen" class="form-section-block">
+            <h2 class="sub-title">Weitere Reflexionsfragen</h2>
+            <p>Bitte nimm dir Zeit, die folgenden Fragen ebenfalls zu beantworten (max. 250 Wörter pro Frage).</p>
+
+            <div class="form-group">
+                <label for="zusatz_zuhoren_bedeutung">1. Selbsteinschätzung & Motivation: Was bedeutet für dich „zuhören“?</label>
+                <textarea id="zusatz_zuhoren_bedeutung" name="zusatz_zuhoren_bedeutung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_motivation_begleitung">Warum möchtest du Menschen in schwierigen Situationen begleiten?</label>
+                <textarea id="zusatz_motivation_begleitung" name="zusatz_motivation_begleitung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+             <div class="form-group">
+                <label for="zusatz_guter_zuhoerer">In welchen Situationen fühlst du dich als besonders guter Zuhörer?</label>
+                <textarea id="zusatz_guter_zuhoerer" name="zusatz_guter_zuhoerer" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_themen_herz">Welche Themen liegen dir besonders am Herzen?</label>
+                <textarea id="zusatz_themen_herz" name="zusatz_themen_herz" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_staerken_kontakt">Was sind deine größten Stärken in zwischenmenschlichen Kontakten?</label>
+                <textarea id="zusatz_staerken_kontakt" name="zusatz_staerken_kontakt" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="zusatz_umgang_gefuehle">2. Selbstreflexion & emotionale Stabilität: Wie gehst du mit eigenen Gefühlen um, wenn du schwierige Dinge hörst?</label>
+                <textarea id="zusatz_umgang_gefuehle" name="zusatz_umgang_gefuehle" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_reaktion_ueberforderung">Wie reagierst du, wenn du dich überfordert oder hilflos fühlst?</label>
+                <textarea id="zusatz_reaktion_ueberforderung" name="zusatz_reaktion_ueberforderung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+             <div class="form-group">
+                <label for="zusatz_abgrenzung">Was tust du konkret, um dich emotional abzugrenzen?</label>
+                <textarea id="zusatz_abgrenzung" name="zusatz_abgrenzung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_belastende_themen">Gibt es Themen, die dich persönlich sehr stark belasten?</label>
+                <textarea id="zusatz_belastende_themen" name="zusatz_belastende_themen" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_psych_wohlbefinden">Wie sorgst du für dein eigenes psychisches Wohlbefinden?</label>
+                <textarea id="zusatz_psych_wohlbefinden" name="zusatz_psych_wohlbefinden" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="zusatz_reaktion_still_ablehnend">3. Kommunikationsstil & Haltung: Wie würdest du reagieren, wenn jemand sehr still oder ablehnend ist?</label>
+                <textarea id="zusatz_reaktion_still_ablehnend" name="zusatz_reaktion_still_ablehnend" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_mitfuehlen_loesung">Was ist dir wichtiger: mitzufühlen oder Lösungen anzubieten?</label>
+                <textarea id="zusatz_mitfuehlen_loesung" name="zusatz_mitfuehlen_loesung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_umgang_widerspruch_werte">Wie gehst du mit Meinungen um, die deinen eigenen Werten widersprechen?</label>
+                <textarea id="zusatz_umgang_widerspruch_werte" name="zusatz_umgang_widerspruch_werte" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_ratschlaege_wann">Wann gibst du Ratschläge – und wann eher nicht?</label>
+                <textarea id="zusatz_ratschlaege_wann" name="zusatz_ratschlaege_wann" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_hilfe_selbsthilfe">Was verstehst du unter „Hilfe zur Selbsthilfe“?</label>
+                <textarea id="zusatz_hilfe_selbsthilfe" name="zusatz_hilfe_selbsthilfe" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="zusatz_reaktion_weinen">4. Umgang mit schwierigen Gesprächssituationen: Was würdest du tun, wenn jemand während des Gesprächs weint?</label>
+                <textarea id="zusatz_reaktion_weinen" name="zusatz_reaktion_weinen" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_reaktion_wut_person">Wie reagierst du, wenn jemand sehr wütend wird?</label>
+                <textarea id="zusatz_reaktion_wut_person" name="zusatz_reaktion_wut_person" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+             <div class="form-group">
+                <label for="zusatz_nicht_weiterkommen">Was machst du, wenn du das Gefühl hast, nicht weiterzukommen?</label>
+                <textarea id="zusatz_nicht_weiterkommen" name="zusatz_nicht_weiterkommen" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_umgang_schweigen">Wie gehst du mit Schweigen in Gesprächen um?</label>
+                <textarea id="zusatz_umgang_schweigen" name="zusatz_umgang_schweigen" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_reaktion_suizid_person">Was wäre deine Reaktion, wenn dir jemand Suizidgedanken anvertraut?</label>
+                <textarea id="zusatz_reaktion_suizid_person" name="zusatz_reaktion_suizid_person" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="zusatz_grenzen_verantwortung">5. Verantwortung, Grenzen & Weitervermittlung: Wo liegen für dich die Grenzen deiner Verantwortung?</label>
+                <textarea id="zusatz_grenzen_verantwortung" name="zusatz_grenzen_verantwortung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_entscheidung_weiterleitung">Wie würdest du entscheiden, wann du eine Person an professionelle Hilfe weiterleitest?</label>
+                <textarea id="zusatz_entscheidung_weiterleitung" name="zusatz_entscheidung_weiterleitung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_warnzeichen_prof_hilfe">Was sind klare Warnzeichen, dass jemand dringend professionelle Unterstützung braucht?</label>
+                <textarea id="zusatz_warnzeichen_prof_hilfe" name="zusatz_warnzeichen_prof_hilfe" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_vertraulichkeit">Was verstehst du unter „Vertraulichkeit“ – und wo hat sie Grenzen?</label>
+                <textarea id="zusatz_vertraulichkeit" name="zusatz_vertraulichkeit" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_team_reflexion">Wärst du bereit, im Team über schwierige Fälle zu reflektieren?</label>
+                <textarea id="zusatz_team_reflexion" name="zusatz_team_reflexion" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="zusatz_kritikfaehigkeit">6. Teamfähigkeit & Bereitschaft zur Entwicklung: Wie gut kannst du Kritik annehmen und verarbeiten?</label>
+                <textarea id="zusatz_kritikfaehigkeit" name="zusatz_kritikfaehigkeit" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_austausch_gruppe">Wie wichtig ist dir Austausch mit anderen in der Gruppe?</label>
+                <textarea id="zusatz_austausch_gruppe" name="zusatz_austausch_gruppe" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_erwartung_team">Was erwartest du von einem guten Team?</label>
+                <textarea id="zusatz_erwartung_team" name="zusatz_erwartung_team" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_kompetenzen_verbessern">Welche Kompetenzen würdest du gerne noch verbessern?</label>
+                <textarea id="zusatz_kompetenzen_verbessern" name="zusatz_kompetenzen_verbessern" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="form-group">
+                <label for="zusatz_teilnahme_fortbildung">Bist du bereit, an regelmäßigen Fortbildungen oder Supervisionen teilzunehmen?</label>
+                <textarea id="zusatz_teilnahme_fortbildung" name="zusatz_teilnahme_fortbildung" rows="3"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+        </section>
+
+        <section id="abschluss" class="form-section-block">
+            <h2 class="sub-title">Abschlussfrage (optional)</h2>
+            <div class="form-group">
+                <label for="abschluss_mitgeben">Möchtest du uns noch etwas mitgeben? Gibt es etwas, das wir über dich wissen sollten?</label>
+                <textarea id="abschluss_mitgeben" name="abschluss_mitgeben" rows="4"></textarea>
+                <span class="char-limit">(max. 250 Wörter)</span>
+            </div>
+            <div class="btn-container" style="justify-content: center;">
+                <button type="submit" class="btn btn-submit">Bewerbung absenden</button>
+            </div>
+        </section>
+    </form>
+
+    <section id="contact-infos">
+        <h2 class="title">Kontakt</h2>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <!-- Statt inline style="filter: invert(1)" könnte man dies auch in CSS machen -->
+                <img src="https://simpleicons.org/icons/gmail.svg" alt="E-Mail" class="icon email-icon" style="filter:invert(1)"/>
+                <p><a href="mailto:beispiel@projekt-email.de">beispiel@projekt-email.de</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="https://simpleicons.org/icons/whatsapp.svg" alt="Telefon" class="icon" style="filter:invert(1)"/>
+                <p><a href="tel:+491234567890">+49 123 4567890</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul class="nav-links footer-nav-links"> <!-- Eigene Klasse für Footer-Navigationslinks hinzugefügt -->
+            <li><a href="#teil1">Allgemein</a></li>
+            <li><a href="#teil2">Selbsteinschätzung</a></li>
+            <li><a href="#weitere-fragen">Reflexion</a></li>
+            <li><a href="#contact-infos">Kontakt</a></li>
+        </ul>
+        <p>Copyright © <span id="currentYear">2024</span> Zuhör-Projekt. Alle Rechte vorbehalten.</p>
+    </footer>
+    <!-- Eine unsichtbare Klasse für Screenreader-Only Text -->
+    <span class="sr-only" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Screenreader Text</span>
+
+
+    <script src="script.js" defer></script>
+</body>
+</html>
